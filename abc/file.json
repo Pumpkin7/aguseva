@@ -1,0 +1,9 @@
+{
+    "type": "record", 
+    "name": "file",
+    "fields" : [
+        {"name": "filepath", "type" : "string"},
+        {"name": "filename", "type" : "string"},
+        {"name": "filesize", "type" : "long"}
+    ]
+}
