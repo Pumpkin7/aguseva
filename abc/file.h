@@ -31,11 +31,13 @@ namespace c {
 struct file {
     std::string filepath;
     std::string filename;
+	std::string hash;
     int64_t filesize;
     file() :
         filepath(std::string()),
         filename(std::string()),
-        filesize(int64_t())
+        filesize(int64_t()),
+		hash(std::string())
         { }
 };
 
@@ -46,6 +48,7 @@ template<> struct codec_traits<c::file> {
 		avro::encode(e, v.filepath);
         avro::encode(e, v.filename);
         avro::encode(e, v.filesize);
+		avro::encode(e, v.hash);
 
     }
     static void decode(Decoder& d, c::file& v) {
@@ -64,6 +67,9 @@ template<> struct codec_traits<c::file> {
                 case 2:
                     avro::decode(d, v.filesize);
                     break;
+				case 3:
+                    avro::decode(d, v.hash);
+                    break;
                 default:
                     break;
                 }
@@ -72,6 +78,7 @@ template<> struct codec_traits<c::file> {
             avro::decode(d, v.filepath);
             avro::decode(d, v.filename);
             avro::decode(d, v.filesize);
+			avro::decode(d, v.hash);
         }
     }
 };

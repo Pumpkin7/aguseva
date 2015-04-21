@@ -4,6 +4,7 @@
     "fields" : [
         {"name": "filepath", "type" : "string"},
         {"name": "filename", "type" : "string"},
+		{"name": "hash", "type" : "string"},	
         {"name": "filesize", "type" : "long"}
     ]
 }

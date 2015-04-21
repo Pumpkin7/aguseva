@@ -80,9 +80,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="mnv.cpp" />
+    <ClCompile Include="sha1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="sha1.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="avrocpp.dll">
