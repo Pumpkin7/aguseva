@@ -1,22 +1,20 @@
 #include<fstream>
 #include <windows.h>
 #include <boost/filesystem.hpp>
-#include <tchar.h>
+//#include <tchar.h>
 #include <iostream>
-#include <ctime>
+//#include <ctime>
 #include <Encoder.hh>
 #include <Compiler.hh>
 #include <Specific.hh>
 #include <ValidSchema.hh>
 #include "file.h"
-#include <fstream>
+//#include <fstream>
 #include <DataFile.hh>
 #include <Decoder.hh>
 #include "sha1.h"
 #include <string.h>
-
 #pragma comment(lib,"avrocpp.lib")
-
 
 using namespace std;
 void firstTask();
@@ -24,7 +22,7 @@ void secondTask();
 void proverka(boost::filesystem::path path ,vector<c::file> A, bool * checkA);
 string hash_sha1(const char * hash_str, int length){ 
 	unsigned char * hash = new unsigned char[length];
-	char * hexstring = new char [41]; // Строка хэш-суммы всегда одной длины
+	char * hexstring = new char [41]; // Г‘ГІГ°Г®ГЄГ  ГµГЅГё-Г±ГіГ¬Г¬Г» ГўГ±ГҐГЈГ¤Г  Г®Г¤Г­Г®Г© Г¤Г«ГЁГ­Г»
 	sha1::calc(hash_str, length, hash);
 	sha1::toHexString(hash, hexstring);
 
@@ -32,8 +30,6 @@ string hash_sha1(const char * hash_str, int length){
 	delete[] hash;
 	delete[] hexstring;
   }
-
-
 void recursiveSearch(boost::filesystem::path path, avro::DataFileWriter<c::file>& fw)
 {
 	namespace fs = boost::filesystem;
